@@ -2,7 +2,7 @@ CREATE DATABASE Assets_DB;
 
 USE Assets_DB;
 
-SET SQL_MODE = '';
+-- SET SQL_MODE = '';
 
 
 
