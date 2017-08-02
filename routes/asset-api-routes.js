@@ -23,7 +23,9 @@ module.exports = function(app){
 			serial_num: req.body.serial_num,
 			bought: req.body.bought,
 			price: req.body.price,
-			info: req.body.info
+			info: req.body.info,
+			inherit: req.body.inherit,
+			image: req.body.image
 
 		}).then(function(assets){
 			
@@ -42,7 +44,9 @@ module.exports = function(app){
 			serial_num: req.body.serial_num,
 			bought: req.body.bought,
 			price: req.body.price,
-			info: req.body.info
+			info: req.body.info,
+			inherit: req.body.inherit,
+			image: req.body.image
 		},
 		{
 			where: {id: req.body.id}
