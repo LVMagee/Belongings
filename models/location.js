@@ -31,7 +31,15 @@ module.exports = function(sequelize, DataTypes) {
 			validate: {
 				len: [1]
             }
-        },   
+		}, 
+		
+		zip_code: {
+			type: DataTypes.TEXT,
+			alllowNull: false,
+			validate: {
+				len: [1]
+			}
+		},
 
 		phone_num: {
 			type: DataTypes.TEXT,
