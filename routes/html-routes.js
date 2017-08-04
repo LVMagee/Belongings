@@ -39,7 +39,7 @@ module.exports = function(app) {
 
   //once logged in
   app.get("/home", isAuthenticated, function(req, res) {
-    res.sendFile(path.join(__dirname + "/../views/belongings.html"));
+    res.sendFile(path.join(__dirname + "/../views/home.html"));
   });
 
 };
