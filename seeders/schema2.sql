@@ -1,0 +1,1 @@
+INSERT INTO users (email, password, createdAt, updatedAt) VALUES ("Samjones@email.com", "fruit123",'2017-07-31 01:20:41', '2017-07-31 01:20:41');

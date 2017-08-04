@@ -22,12 +22,18 @@ module.exports = function(app) {
     db.User.create({
       email: req.body.email,
       password: req.body.password
-    }).then(function() {
+    }).then(function(dbuser) {
       res.redirect(307, "/api/login");
     }).catch(function(err) {
       res.json(err);
     });
   });
+
+  app.get("/api/signup", function(req,res){
+    db.User.findAll().then(function(dbuser){
+        res.json(dbuser)
+    });
+});
 
   // Route for logging user out
   app.get("/logout", function(req, res) {
