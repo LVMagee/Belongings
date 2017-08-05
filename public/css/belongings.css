@@ -11,6 +11,26 @@ thead {
 	font-weight: bolder;
 }
 
+h3 {
+	
+	font-family: 'The Girl Next Door', cursive;
+}
+
+#nb {
+	opacity: 0.4;
+}
+
+
+.jumbotron {
+	text-align: center;
+	background-color: transparent;
+}
+
+#polaroid {
+	font-family: 'Homemade Apple', cursive;
+	color: rgb(53,112,232);
+}
+
 /* this is styling the div which pops up when the create account button is clicked on the homepage */
 #createAccountForm {
 	display: none;	

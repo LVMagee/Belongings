@@ -49,13 +49,14 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.TEXT,
         },
 
-        // inherit: {
-        //     type: DataTypes.STRING,
-        // },
+        inherit: {
+            type: DataTypes.STRING,
+        },
 
-        // image: {
-        //     type: DataTypes.STRING,
-        // }
+        image: {
+            type: DataTypes.STRING,
+        }
     });
     return Asset;
+
 };

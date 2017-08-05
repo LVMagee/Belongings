@@ -7,8 +7,16 @@ module.exports = function(app){
 
 	//GET Route to display all user items
 	app.get("/api/assets", function(req, res){
-		db.Asset.findAll({}).then(function(assets){
-			res.json(assets);
+		var query = {};
+    	if (req.query.user_id) {
+      		query.UserId = req.query.user_id;
+    	}
+
+		db.Asset.findAll({
+			where: query,
+      		include: db.User
+		}).then(function(assets){
+			res.json(dbAsset);
 		});
 	});
 
@@ -23,11 +31,13 @@ module.exports = function(app){
 			serial_num: req.body.serial_num,
 			bought: req.body.bought,
 			price: req.body.price,
-			info: req.body.info
+			info: req.body.info,
+			inherit: req.body.inherit,
+			image: req.body.image
 
 		}).then(function(assets){
 			
-			res.json(assets);
+			res.json(dbAsset);
 		});
 	});
 	
@@ -42,12 +52,14 @@ module.exports = function(app){
 			serial_num: req.body.serial_num,
 			bought: req.body.bought,
 			price: req.body.price,
-			info: req.body.info
+			info: req.body.info,
+			inherit: req.body.inherit,
+			image: req.body.image
 		},
 		{
 			where: {id: req.body.id}
 		}).then(function(assets){
-			res.json(assets);
+			res.json(dbAsset);
 		});
 	});
 
@@ -56,7 +68,7 @@ module.exports = function(app){
 		db.Asset.destroy({
 			where: {id: req.params.id}
 		}).then(function(assets){
-			res.json(assets);
+			res.json(dbAsset);
 		});
 	});
 }

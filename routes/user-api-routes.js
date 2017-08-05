@@ -32,7 +32,7 @@ module.exports = function(app) {
   // Route for logging user out
   app.get("/logout", function(req, res) {
     req.logout();
-    res.redirect("/login");
+    res.redirect("/home");
   });
 
   // Route for getting some data about our user to be used client side
@@ -50,19 +50,5 @@ module.exports = function(app) {
       });
   }
 });
-
-  //route to UPDATE asset
-  app.put("/api/user", function(req,res){
-    db.user.update(
-    {
-      email: req.body.email,
-      password: req.body.password,
-      
-    },{
-      where: {id: req.body.id}
-    }).then(function(user){
-      res.json(user);
-    });
-  });
 };
 

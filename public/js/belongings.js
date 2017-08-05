@@ -1,6 +1,10 @@
 
 $(document).ready(function(){
-	var nav = document.getElementById("navBar")
+  var nav = document.getElementById("navBar")
+  
+    $.get("/api/user_data").then(function(data) {
+    $(".member-name").text(data.email);
+  });
 
   $(document).on("click", ".itemRemove", function(){
     $("#itemDetail").hide();
@@ -81,15 +85,7 @@ $(document).ready(function(){
       
     };
 
-    // function makeSpecificRow(){
-    //   var letter = $(".alphabet").value;
-    //   for (var i= 0; i< assets.length; i++){
-    //     if (letter == assets[i].itemName.charAt(0).toLowerCase() ) {
-    //       assetContainer.empty();
-    //       createNewRow();
-    //     }
-    //   };
-    // };
+
 
     $(document).on("click", ".alphabet", function(){
       search(this);

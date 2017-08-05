@@ -1,7 +1,7 @@
 module.exports = function(sequelize, DataTypes) {
-	var Insurance = sequelize.define("Insurance", {
+	var Location = sequelize.define("Location", {
 
-		insur_type: {
+		locate_name: {
 			type: DataTypes.STRING,
 			alllowNull: false,
 			validate: {
@@ -9,8 +9,32 @@ module.exports = function(sequelize, DataTypes) {
 			}
 		},
 
-		company: {
+		street: {
 			type: DataTypes.STRING,
+			alllowNull: false,
+			validate: {
+				len: [1]
+			}
+        },
+        
+        city: {
+			type: DataTypes.STRING,
+			alllowNull: false,
+			validate: {
+				len: [1]
+			}
+        },
+        
+        state: {
+			type: DataTypes.STRING,
+			alllowNull: false,
+			validate: {
+				len: [1]
+            }
+		}, 
+		
+		zip_code: {
+			type: DataTypes.TEXT,
 			alllowNull: false,
 			validate: {
 				len: [1]
@@ -25,38 +49,21 @@ module.exports = function(sequelize, DataTypes) {
 			}
 		},
 
-		agent: {
-			type: DataTypes.STRING,
-			alllowNull: false,
-			validate: {
-				len: [1]
-			}
-		},
-
-		policy_num: {
-			type: DataTypes.TEXT,
-			alllowNull: false,
-			validate: {
-				len: [1]
-			}
-		},
-
-		start_date: {
-			type: DataTypes.DATEONLY,
-			alllowNull: false,
-			validate: {
-				len: [1]
-			}
-		},
-
-		info: {
-			type: DataTypes.TEXT,
-		},
-
-		image: {
+		 bought: {
             type: DataTypes.STRING,
+            allowNull: false,
+            isDate: true, 
+            
+        },
+
+        price: {
+            type: DataTypes.DECIMAL,
+            allowNull: false,
+            isDecimal: true,
+
         }
+
 	});
 
-	return Insurance;
+	return Location;
 };

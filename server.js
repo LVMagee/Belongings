@@ -8,6 +8,7 @@ var passport = require("./config/passport");
 // Setting up port and requiring models for syncing
 var PORT = process.env.PORT || 3306;
 var db = require("./models");
+require("./associations")(db);
 
 // Creating express app and configuring middleware needed for authentication
 var app = express();
@@ -20,10 +21,11 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Requiring our routes
+require("./routes/user-api-routes.js")(app);
 require("./routes/html-routes.js")(app);
 require("./routes/asset-api-routes.js")(app);
 require("./routes/insurance-api-routes.js")(app);
-require("./routes/user-api-routes.js")(app);
+
 
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync().then(function() {

@@ -38,8 +38,8 @@ module.exports = function(app) {
   // });
 
   //once logged in
-  app.get("/home", function(req, res) {
-    res.sendFile(path.join(__dirname + "/../views/belongings.html"));
+  app.get("/home", isAuthenticated, function(req, res) {
+    res.sendFile(path.join(__dirname + "/../views/home.html"));
   });
 
 };
