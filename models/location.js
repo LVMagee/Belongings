@@ -47,7 +47,21 @@ module.exports = function(sequelize, DataTypes) {
 			validate: {
 				len: [1]
 			}
-		}
+		},
+
+		 bought: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            isDate: true, 
+            
+        },
+
+        price: {
+            type: DataTypes.DECIMAL,
+            allowNull: false,
+            isDecimal: true,
+
+        }
 
 	});
 

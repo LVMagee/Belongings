@@ -50,19 +50,5 @@ module.exports = function(app) {
       });
   }
 });
-
-  //route to UPDATE asset
-  // app.put("/api/user", function(req,res){
-  //   db.user.update(
-  //   {
-  //     email: req.body.email,
-  //     password: req.body.password,
-      
-  //   },{
-  //     where: {id: req.body.id}
-  //   }).then(function(user){
-  //     res.json(user);
-  //   });
-  // });
 };
 

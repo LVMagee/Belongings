@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title></title>
 	<!-- linking the CSS pages -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -60,23 +61,8 @@
 			<div role="tabpanel" class="tab-pane" id="profile">
 			<center>
 			<br >
-			
-				<!-- <h4>User Name</h4>
-				Tianna
-				<br > -->
-
-				<h4 id="fullName"></h4>
-				
-				<br >
-
-				<!--Leave user name off. There is no where to enter
-				a user name!  -->
-
 				<h4 id="userEmail"></h4>
-				
 				<br >
-
-				<button id="passwordChange">Change Password</button>
 			</center>
 			</div>
 
@@ -98,39 +84,10 @@
     		<div role="tabpanel" class="tab-pane" id="items">
     			<center>
 
-    			<div id="alphabetList" class="row">
-    			<!-- Alphabet list for the item name search -->
 				<div>
 					<!-- Button trigger modal for create an Item -->
 					<span id="plus" class="glyphicon glyphicon-plus" aria-hidden="true" data-toggle="modal" data-target="#createItemForm"></span>
 			
-					<span id="a" value="a" class="alphabet"><a href="#search">A</a></span>
-					<span id="b" value="b" class="alphabet"><a href="#search">B</a></span>
-					<span id="c" value="c" class="alphabet"><a href="#search">C</a></span>
-					<span id="d" value="d" class="alphabet"><a href="#search">D</a></span>
-					<span id="e" value="e" class="alphabet"><a href="#search">E</a></span>
-					<span id="f" value="f" class="alphabet"><a href="#search">F</a></span>
-					<span id="g" value="g" class="alphabet"><a href="#search">G</a></span>
-					<span id="h" value="h" class="alphabet"><a href="#search">H</a></span>
-					<span id="i" value="i" class="alphabet"><a href="#search">I</a></span>
-					<span id="j" value="j" class="alphabet"><a href="#search">J</a></span>
-					<span id="k" value="k" class="alphabet"><a href="#search">K</a></span>
-					<span id="l" value="l" class="alphabet"><a href="#search">L</a></span>
-					<span id="m" value="m" class="alphabet"><a href="#search">M</a></span>
-					<span id="n" value="n" class="alphabet"><a href="#search">N</a></span>
-					<span id="o" value="o" class="alphabet"><a href="#search">O</a></span>
-					<span id="p" value="p" class="alphabet"><a href="#search">P</a></span>
-					<span id="q" value="q" class="alphabet"><a href="#search">Q</a></span>
-					<span id="r" value="r" class="alphabet"><a href="#search">R</a></span>
-					<span id="s" value="s" class="alphabet"><a href="#search">S</a></span>
-					<span id="t" value="t" class="alphabet"><a href="#search">T</a></span>
-					<span id="u" value="u" class="alphabet"><a href="#search">U</a></span>
-					<span id="v" value="v" class="alphabet"><a href="#search">V</a></span>
-					<span id="w" value="w" class="alphabet"><a href="#search">W</a></span>
-					<span id="x" value="x" class="alphabet"><a href="#search">X</a></span>
-					<span id="y" value="y" class="alphabet"><a href="#search">Y</a></span>
-					<span id="z" value="z" class="alphabet"><a href="#search">Z</a></span>
-				</div>
 
 				</div>
 				</center>
@@ -238,6 +195,16 @@
 								<textarea class="form-control" rows="3" id="itemInfo"></textarea>
 							</div>
 
+								<div class="form-group">
+								<label for="inherit">Who Inherits</label>
+								<input class="form-control" id="updateinherit" placeholder="inherit">
+							</div>
+
+							<div class="form-group">
+								<label for="image">Image</label>
+								<input class="form-control" id="image" placeholder="image">
+							</div>
+
 							<button type="submit" class="btn btn-default">
 								Submit
 							</button>
@@ -319,6 +286,16 @@
 								<textarea class="form-control" rows="3" id="updateItemInfo"></textarea>
 							</div>
 
+							<div class="form-group">
+								<label for="inherit">Who Inherits</label>
+								<input class="form-control" id="updateinherit" placeholder="inherit">
+							</div>
+
+							<div class="form-group">
+								<label for="image">Image</label>
+								<input class="form-control" id="image" placeholder="image">
+							</div>
+
 							<button type="submit" class="btn btn-default">
 								Submit
 							</button>
@@ -363,8 +340,8 @@
 							</div>
 								    
 							<div class="form-group">
-								<label for="phoneNum">Phone Number</label>
-								<input class="form-control" id="phoneNum" placeholder="Phone Number">
+								<label for="phone_num">Phone Number</label>
+								<input class="form-control" id="phone_num" placeholder="phone_num">
 							</div>
 
 							<div class="form-group">
@@ -387,6 +364,84 @@
 								<textarea class="form-control" rows="3" id="insurInfo"></textarea>
 							</div>
 
+							<div class="form-group">
+								<label for="image">Image</label>
+								<input class="form-control" id="image" placeholder="image">
+							</div>
+
+							<button type="submit" class="btn btn-default">
+								Submit
+							</button>
+				    	</form>
+				    	</center>
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+	<!-- this is the pop modal for the add an location form -->
+	<div class="modal" id="locationInfoForm" tabindex="-1" role="dialog" aria-labelledby="locationInfoForm">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				
+				<!-- this is the header title for the create an item form pop-up modal-->
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        		<center>
+	        			<h4 class="modal-title" id="locationInfoForm">Add location</h4>
+	        		</center>
+				</div>
+				
+				<!-- this is the body where the forms lies within the form pop-up modal -->
+				<div class="modal-body">
+					<div id="locationInfoForm" class="row">
+						<center>
+						<!-- this is form for create an item -->
+						<form id="location-form">
+				    		<div class="form-group">
+								<label for="locate_type">Location Name</label>
+								<input class="form-control" id="locate_type" placeholder="location Type">
+							</div>
+
+							<div class="form-group">
+								<label for="street">Street Name</label>
+								<input class="form-control" id="streetName" placeholder="street">
+							</div>
+								    
+							<div class="form-group">
+								<label for="phoneNum">City Name</label>
+								<input class="form-control" id="phoneNum" placeholder="Phone Number">
+							</div>
+
+							<div class="form-group">
+								<label for="state">State</label>
+								<input class="form-control" id="state" placeholder="state">
+							</div>
+
+							<div class="form-group">
+								<label for="zip_code">Zip Code</label>
+								<input class="form-control" id="zip_code" placeholder="zip_code">
+							</div>
+
+							<div class="form-group">
+								<label for="phone_num">Phone Number</label>
+								<input class="form-control" id="phone_num" placeholder="phone_num">
+							</div>
+							
+							<div class="form-group">
+								<label for="bought">Date Bought</label>
+								<input class="form-control" id="bought" placeholder=""YYYY-MM-DD"">
+							</div>
+
+							<div class="form-group">
+								<label for="price">Price Paid</label>
+								<input class="form-control" id="price" placeholder="price">
+							</div>
+
 							<button type="submit" class="btn btn-default">
 								Submit
 							</button>
@@ -400,6 +455,7 @@
 		</div>
 	</div>
 	<script type="text/javascript" src="assets/js/assetTable.js"></script>
+	<script type="text/javascript" src="assets/js/locationTable.js"></script>
 	<script type="text/javascript" src="assets/js/insuranceTable.js"></script>
 	<script type="text/javascript" src="assets/js/belongings.js"></script>
 

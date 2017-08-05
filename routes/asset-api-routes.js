@@ -7,8 +7,16 @@ module.exports = function(app){
 
 	//GET Route to display all user items
 	app.get("/api/assets", function(req, res){
-		db.Asset.findAll({}).then(function(assets){
-			res.json(assets);
+		var query = {};
+    	if (req.query.user_id) {
+      		query.UserId = req.query.user_id;
+    	}
+
+		db.Asset.findAll({
+			where: query,
+      		include: db.User
+		}).then(function(assets){
+			res.json(dbAsset);
 		});
 	});
 
@@ -29,7 +37,7 @@ module.exports = function(app){
 
 		}).then(function(assets){
 			
-			res.json(assets);
+			res.json(dbAsset);
 		});
 	});
 	
@@ -51,7 +59,7 @@ module.exports = function(app){
 		{
 			where: {id: req.body.id}
 		}).then(function(assets){
-			res.json(assets);
+			res.json(dbAsset);
 		});
 	});
 
@@ -60,7 +68,7 @@ module.exports = function(app){
 		db.Asset.destroy({
 			where: {id: req.params.id}
 		}).then(function(assets){
-			res.json(assets);
+			res.json(dbAsset);
 		});
 	});
 }

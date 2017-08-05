@@ -7,7 +7,7 @@ module.exports = function(app){
 	//GET Route to display all user insurance
 	app.get("/api/insurance", function(req, res){
 		db.Insurance.findAll({}).then(function(insurance){
-			res.json(insurance);
+			res.json(dbInsurance);
 		});
 	});
 
@@ -21,11 +21,12 @@ module.exports = function(app){
 			agent: req.body.agent,
 			policy_num: req.body.policy_num,
 			start_date: req.body.start_date,
-			info: req.body.info
+			info: req.body.info,
+			image: req.body.image
 
 		}).then(function(insurance){
 			
-			res.json(insurance);
+			res.json(dbInsurance);
 		});
 	});
 	
@@ -39,12 +40,13 @@ module.exports = function(app){
 			agent: req.body.agent,
 			policy_num: req.body.policy_num,
 			start_date: req.body.start_date,
-			info: req.body.info
+			info: req.body.info,
+			image: req.body.image
 		},
 		{
 			where: {id: req.body.id}
 		}).then(function(insurance){
-			res.json(insurance);
+			res.json(dbInsurance);
 		});
 	});
 
@@ -53,7 +55,7 @@ module.exports = function(app){
 		db.Insurance.destroy({
 			where: {id: req.params.id}
 		}).then(function(insurance){
-			res.json(insurance);
+			res.json(dbInsurance);
 		});
 	});
 }

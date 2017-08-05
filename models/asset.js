@@ -59,14 +59,4 @@ module.exports = function(sequelize, DataTypes) {
     });
     return Asset;
 
-    // return Asset.create({
-    //     itemName:'tv', 
-    //     category: 'Electronics', 
-    //     make: 'Vizio', 
-    //     model:'abc123', 
-    //     serial_num: 'ab125678', 
-    //     bought: '2017-2-4', 
-    //     price:'450', 
-    //     info:'none'
-    // });
 };

@@ -6,5 +6,3 @@ module.exports = function(db) {
   db.User.hasMany(db.Insurance,{ onDelete: "cascade" });
   db.Location.hasMany(db.Asset,{ onDelete: "cascade" });
 };
-//  db.Post.belongsTo(db.Author, { foreignKey: { allowNull: false } });
-//   db.Author.hasMany(db.Post, { onDelete: "cascade" });

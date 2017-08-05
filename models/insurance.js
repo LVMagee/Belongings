@@ -52,6 +52,10 @@ module.exports = function(sequelize, DataTypes) {
 		info: {
 			type: DataTypes.TEXT,
 		},
+
+		image: {
+            type: DataTypes.STRING,
+        }
 	});
 
 	return Insurance;
