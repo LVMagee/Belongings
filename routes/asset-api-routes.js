@@ -23,6 +23,7 @@ module.exports = function(app){
 			serial_num: req.body.serial_num,
 			bought: req.body.bought,
 			price: req.body.price,
+			itemPicture: req.body.itemPicture,
 			info: req.body.info
 
 		}).then(function(assets){
@@ -42,6 +43,7 @@ module.exports = function(app){
 			serial_num: req.body.serial_num,
 			bought: req.body.bought,
 			price: req.body.price,
+			itemPicture:req.body.itemPicture,
 			info: req.body.info
 		},
 		{

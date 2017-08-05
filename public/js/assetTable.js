@@ -156,6 +156,20 @@ $(document).ready(function(){
     infoText.text(thisAsset.info);
     infoTag.append(infoText);
     items.append(infoTag);
+
+    var break7 =$("<br>");
+    items.append(break7);
+
+    var pictureTag= $("<h4>");
+    pictureTag.text("picture of item:");
+    var pictureImg= $("<br><br>"+"<img>");
+    pictureImg.attr("src", thisAsset.itemPicture);
+    pictureImg.attr("height", "300px");
+    pictureTag.append(pictureImg);
+    items.append(pictureTag);
+
+
+
   }
 
   //to empty out panel containing asset info when panel is closed
@@ -180,7 +194,8 @@ $(document).ready(function(){
       serial_num: $("#serialNumber").val().trim(),
       bought: $("#date").val().trim(),
       price: $("#price").val().trim(),
-      info: $("#itemInfo").val().trim()
+      info: $("#itemInfo").val().trim(),
+      itemPicture: $("#itemPicture").val().trim()
     };
 
     // Posting the new asset, calling displayAssests when done
@@ -196,6 +211,8 @@ $(document).ready(function(){
     $("#date").val("");
     $("#price").val("");
     $("#itemInfo").val("");
+    //added new information
+    $("#itemPicture").val("");
   }
 
   //code to update asset when edit icon is clicked
@@ -215,7 +232,7 @@ $(document).ready(function(){
     $("#updateDate").val(currentAsset.bought);
     $("#updatePrice").val(currentAsset.price);
     $("#updateItemInfo").val(currentAsset.info);
-
+$("#updateItemInfo").val(currentAsset.itemPicture);
     $(document).on("submit", "#update-asset-form", updateAsset(currentAsset));
   }
 
@@ -232,6 +249,7 @@ $(document).ready(function(){
       bought: $("#updateDate").val().trim(),
       price: $("#updatePrice").val().trim(),
       info: $("#updateItemInfo").val().trim(),
+      itemPicture: $("#updatePicutre").val().trim(),
       id: currentAsset.id
     };
 
