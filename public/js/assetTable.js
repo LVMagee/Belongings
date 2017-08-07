@@ -9,6 +9,10 @@ $(document).ready(function(){
 
   var assets;
 
+  $(".proper").on("click", function(){
+    alert('hello');
+  })
+
   //will display items when item tab is clicked
   function displayAssets(){
 
@@ -76,6 +80,12 @@ $(document).ready(function(){
   //=================================================================
   $(document).on("click", ".itemRowClick", fullAssestDisplay);
   $(document).on("click", "#closeItemDetail", emptyAssets);
+  $(document).on("click", ".proper", runThis);
+
+  function runThis(){
+    var t= $("<h4>");
+    t.text("this is working surprisingly");
+  }
 
   var items = $(".items");
 

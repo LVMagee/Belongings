@@ -15,7 +15,22 @@ $(document).ready(function(){
 	$("#closeItemDetail").click(function(){
 		$("#itemDetail").hide();
 		nav.style.opacity = 1;
-	});
+  });
+  
+  $(".proper").on("click", function(){
+    var propertycontainer = $(".property-containter");
+    
+    $.get("/api/assets", function(data) {
+            console.log("Assets", data);
+            assets = data;
+      }.then(function(){
+        propertycontainer.empty();
+        for(i=0;i<assets.length; i++){
+          propertycontainer.append(assets[i]);
+        }
+
+  })
+    )
 
   // This function constructs a asset row
   function createNewRow(asset) {
