@@ -1,5 +1,5 @@
 {
-  "name": "treasure-chest",
+  "name": "enumerate",
   "version": "1.0.0",
   "description": "This is an app to keep up with your personal belongings and assets.",
   "main": "node server.js",

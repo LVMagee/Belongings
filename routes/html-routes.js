@@ -12,7 +12,7 @@ var isAuthenticated = require("../config/middleware/isAuthenticated");
 module.exports = function(app) {
 
  app.get("/", function(req, res) {
-    // If the user already has an account send them to the junkDrawer page
+  
     if (req.user) {
       res.redirect("/home");
     }
@@ -20,12 +20,20 @@ module.exports = function(app) {
   });
 
   app.get("/login", function(req, res) {
-    // If the user already has an account send them to the junkDrawer page
+    // If the user already has an account send them to the login page
     if (req.user) {
       res.redirect("/home");
     }
     res.sendFile(path.join(__dirname + "/../views/login.html"));
   });
+
+  app.get("/signup", function(req, res) {
+    // If the user already has an account send them to the login page
+    if (req.user) {
+      res.redirect("/home");
+    }
+    res.sendFile(path.join(__dirname + "/../views/signup.html"));
+  }); 
 
 
 

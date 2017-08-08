@@ -7,7 +7,7 @@ module.exports = function(app){
     //GET Route to display all user location
     
 	app.get("/api/location", function(req, res){
-		db.Location.findAll({}).then(function(location){
+		db.Location.findAll({}).then(function(dbLocation){
 			res.json(dbLocation);
 		});
 	});
@@ -25,7 +25,7 @@ module.exports = function(app){
 			bought: req.body.bought,
 			price: req.body.price
 
-		}).then(function(location){
+		}).then(function(dbLocation){
 			
 			res.json(dbLocation);
 		});
@@ -46,7 +46,7 @@ module.exports = function(app){
 		},
 		{
 			where: {id: req.body.id}
-		}).then(function(location){
+		}).then(function(dbLocation){
 			res.json(dbLocation);
 		});
 	});
@@ -55,7 +55,7 @@ module.exports = function(app){
 	app.delete("/api/location/:id", function(req, res){
 		db.Location.destroy({
 			where: {id: req.params.id}
-		}).then(function(location){
+		}).then(function(dbLocation){
 			res.json(dbLocation);
 		});
 	});

@@ -14,7 +14,7 @@ require("./associations")(db);
 var app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use('/assets', express.static('public'))
+app.use('/public',express.static('public'));
 // We need to use sessions to keep track of our user's login status
 app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
@@ -25,6 +25,7 @@ require("./routes/user-api-routes.js")(app);
 require("./routes/html-routes.js")(app);
 require("./routes/asset-api-routes.js")(app);
 require("./routes/insurance-api-routes.js")(app);
+require("./routes/location-api-routes.js")(app);
 
 
 // Syncing our database and logging a message to the user upon success

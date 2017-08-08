@@ -15,7 +15,7 @@ module.exports = function(app){
 		db.Asset.findAll({
 			where: query,
       		include: db.User
-		}).then(function(assets){
+		}).then(function(dbAssets){
 			res.json(dbAsset);
 		});
 	});
@@ -35,7 +35,7 @@ module.exports = function(app){
 			inherit: req.body.inherit,
 			image: req.body.image
 
-		}).then(function(assets){
+		}).then(function(dbAssets){
 			
 			res.json(dbAsset);
 		});
@@ -58,7 +58,7 @@ module.exports = function(app){
 		},
 		{
 			where: {id: req.body.id}
-		}).then(function(assets){
+		}).then(function(dbAssets){
 			res.json(dbAsset);
 		});
 	});
@@ -67,7 +67,7 @@ module.exports = function(app){
 	app.delete("/api/assets/:id", function(req, res){
 		db.Asset.destroy({
 			where: {id: req.params.id}
-		}).then(function(assets){
+		}).then(function(dbAssets){
 			res.json(dbAsset);
 		});
 	});
