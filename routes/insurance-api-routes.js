@@ -6,7 +6,7 @@ var db = require("../models");
 module.exports = function(app){
 	//GET Route to display all user insurance
 	app.get("/api/insurance", function(req, res){
-		db.Insurance.findAll({}).then(function(insurance){
+		db.Insurance.findAll({}).then(function(dbInsurance){
 			res.json(dbInsurance);
 		});
 	});
@@ -24,7 +24,7 @@ module.exports = function(app){
 			info: req.body.info,
 			image: req.body.image
 
-		}).then(function(insurance){
+		}).then(function(dbInsurance){
 			
 			res.json(dbInsurance);
 		});
@@ -45,7 +45,7 @@ module.exports = function(app){
 		},
 		{
 			where: {id: req.body.id}
-		}).then(function(insurance){
+		}).then(function(dbInsurance){
 			res.json(dbInsurance);
 		});
 	});
@@ -54,7 +54,7 @@ module.exports = function(app){
 	app.delete("/api/insurance/:id", function(req, res){
 		db.Insurance.destroy({
 			where: {id: req.params.id}
-		}).then(function(insurance){
+		}).then(function(dbInsurance){
 			res.json(dbInsurance);
 		});
 	});

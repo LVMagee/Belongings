@@ -28,7 +28,7 @@ $(document).ready(function() {
       email: email,
       password: password
     }).then(function(data) {
-      window.location.replace("home");
+      window.location.replace(data);
       // If there's an error, log the error
     }).catch(function(err) {
       console.log(err);

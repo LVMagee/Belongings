@@ -1,9 +1,15 @@
 module.exports = function(sequelize, DataTypes) {
 	var Location = sequelize.define("Location", {
 
+		// locate_id: {
+		// 	type: DataTypes.INTERGER,
+		// 	primaryKey: true,
+		// 	autoIncrement: true
+		// },
+
 		locate_name: {
 			type: DataTypes.STRING,
-			alllowNull: false,
+			allowNull: false,
 			validate: {
 				len: [1]
 			}
@@ -11,7 +17,7 @@ module.exports = function(sequelize, DataTypes) {
 
 		street: {
 			type: DataTypes.STRING,
-			alllowNull: false,
+			allowNull: false,
 			validate: {
 				len: [1]
 			}
@@ -19,7 +25,7 @@ module.exports = function(sequelize, DataTypes) {
         
         city: {
 			type: DataTypes.STRING,
-			alllowNull: false,
+			allowNull: false,
 			validate: {
 				len: [1]
 			}
@@ -27,7 +33,7 @@ module.exports = function(sequelize, DataTypes) {
         
         state: {
 			type: DataTypes.STRING,
-			alllowNull: false,
+			allowNull: false,
 			validate: {
 				len: [1]
             }
@@ -35,19 +41,19 @@ module.exports = function(sequelize, DataTypes) {
 		
 		zip_code: {
 			type: DataTypes.TEXT,
-			alllowNull: false,
+			allowNull: false,
 			validate: {
 				len: [1]
 			}
 		},
 
-		phone_num: {
-			type: DataTypes.TEXT,
-			alllowNull: false,
-			validate: {
-				len: [1]
-			}
-		},
+		// phone_num: {
+		// 	type: DataTypes.TEXT,
+		// 	allowNull: false,
+		// 	validate: {
+		// 		len: [1]
+		// 	}
+		// },
 
 		 bought: {
             type: DataTypes.STRING,

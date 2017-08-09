@@ -79,17 +79,11 @@ $(document).ready(function(){
               }
             }
         })
-          // assetContainer.append(specificSearch);
+        
       );
       
       
     };
-
-
-
-    $(document).on("click", ".alphabet", function(){
-      search(this);
-    });
 
 });
 
