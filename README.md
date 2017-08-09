@@ -1,4 +1,4 @@
-# Treasure Chest
+# eNumerate
 Group Project #3
 
 Personal asset database app.  Store all of your worldly goods in one spot, along with your insurance information. Have it handy in case of emergency, leave your password with your executor.  Decide who inherits your favorite things.
@@ -43,6 +43,7 @@ This is a redo of Junk Drawer with a different team.  We wanted to change the co
 
 See also the list of (https://github.com/lvmagee/Belongings/contributors) who participated in this project.
 
+LV Magee
 Laura Le
 Michael Emmons
 Ed Nixon
