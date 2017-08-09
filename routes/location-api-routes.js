@@ -7,8 +7,8 @@ module.exports = function(app){
     //GET Route to display all user location
     
 	app.get("/api/location", function(req, res){
-		db.Location.findAll({}).then(function(dbLocation){
-			res.json(dbLocation);
+		db.Location.findAll({}).then(function(location){
+			res.json(location);
 		});
 	});
 
@@ -21,13 +21,13 @@ module.exports = function(app){
 			city: req.body.city,
 			state: req.body.state,
 			zip_code: req.body.zip_code,
-			phone_num: req.body.phone_num,
+			// phone_num: req.body.phone_num,
 			bought: req.body.bought,
 			price: req.body.price
 
-		}).then(function(dbLocation){
+		}).then(function(location){
 			
-			res.json(dbLocation);
+			res.json(location);
 		});
 	});
 	
@@ -40,14 +40,14 @@ module.exports = function(app){
 			city: req.body.city,
 			state: req.body.state,
 			zip_code: req.body.zip_code,
-			phone_num: req.body.phone_num,
+			// phone_num: req.body.phone_num,
 			bought: req.body.bought,
 			price: req.body.price
 		},
 		{
 			where: {id: req.body.id}
-		}).then(function(dbLocation){
-			res.json(dbLocation);
+		}).then(function(location){
+			res.json(location);
 		});
 	});
 
@@ -55,8 +55,8 @@ module.exports = function(app){
 	app.delete("/api/location/:id", function(req, res){
 		db.Location.destroy({
 			where: {id: req.params.id}
-		}).then(function(dbLocation){
-			res.json(dbLocation);
+		}).then(function(location){
+			res.json(location);
 		});
 	});
 }

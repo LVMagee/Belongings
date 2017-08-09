@@ -6,20 +6,11 @@ var db = require("../models");
 module.exports = function(app){
 
 	//GET Route to display all user items
-	app.get("/api/assets", function(req, res){
-		var query = {};
-    	if (req.query.user_id) {
-      		query.UserId = req.query.user_id;
-    	}
-
-		db.Asset.findAll({
-			where: query,
-      		include: db.User
-		}).then(function(dbAssets){
-			res.json(dbAsset);
+app.get("/api/assets", function(req, res){
+		db.Asset.findAll({}).then(function(assets){
+			res.json(assets);
 		});
 	});
-
 	//POST route for adding new item
 	app.post("/api/assets", function(req,res){
 		db.Asset.create({
@@ -35,9 +26,9 @@ module.exports = function(app){
 			inherit: req.body.inherit,
 			image: req.body.image
 
-		}).then(function(dbAssets){
+		}).then(function(assets){
 			
-			res.json(dbAsset);
+			res.json(assets);
 		});
 	});
 	
@@ -58,8 +49,8 @@ module.exports = function(app){
 		},
 		{
 			where: {id: req.body.id}
-		}).then(function(dbAssets){
-			res.json(dbAsset);
+		}).then(function(assets){
+			res.json(assets);
 		});
 	});
 
@@ -67,8 +58,8 @@ module.exports = function(app){
 	app.delete("/api/assets/:id", function(req, res){
 		db.Asset.destroy({
 			where: {id: req.params.id}
-		}).then(function(dbAssets){
-			res.json(dbAsset);
+		}).then(function(assets){
+			res.json(assets);
 		});
 	});
 }

@@ -1,12 +1,8 @@
 module.exports = function(sequelize, DataTypes) {
 	var Location = sequelize.define("Location", {
 
-		// locate_id: {
-		// 	type: DataTypes.INTERGER,
-		// 	primaryKey: true,
-		// 	autoIncrement: true
-		// },
-
+		
+		
 		locate_name: {
 			type: DataTypes.STRING,
 			allowNull: false,
