@@ -11,7 +11,7 @@ module.exports = function(app) {
     // Since we're doing a POST with javascript, we can't actually redirect that post into a GET request
     // So we're sending the user back the route to the home page because the redirect will happen on the front end
     // They won't get this or even be able to access this page if they aren't authed
-    res.json("/home");
+    res.json("/belongings");
   });
 
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
@@ -32,7 +32,7 @@ module.exports = function(app) {
   // Route for logging user out
   app.get("/logout", function(req, res) {
     req.logout();
-    res.redirect("/home");
+    res.redirect("/");
   });
 
   // Route for getting some data about our user to be used client side

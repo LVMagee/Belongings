@@ -5,10 +5,11 @@ var session = require("express-session");
 // Requiring passport as we've configured it
 var passport = require("./config/passport");
 
+
 // Setting up port and requiring models for syncing
 var PORT = process.env.PORT || 3306;
 var db = require("./models");
-require("./associations")(db);
+// require("./associations")(db);
 
 // Creating express app and configuring middleware needed for authentication
 var app = express();
@@ -34,4 +35,7 @@ db.sequelize.sync().then(function() {
     console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
   });
 });
+
+
+
 
