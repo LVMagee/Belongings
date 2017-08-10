@@ -1,5 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
     var Asset = sequelize.define("Asset", {
+      
 
         itemName: {
             type: DataTypes.STRING,

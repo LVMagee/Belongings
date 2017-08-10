@@ -1,5 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
 	var Insurance = sequelize.define("Insurance", {
+	
 
 		insur_type: {
 			type: DataTypes.STRING,

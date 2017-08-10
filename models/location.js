@@ -1,7 +1,7 @@
 module.exports = function(sequelize, DataTypes) {
 	var Location = sequelize.define("Location", {
 
-		
+	
 		
 		locate_name: {
 			type: DataTypes.STRING,
